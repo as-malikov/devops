@@ -1,4 +1,4 @@
-# DO2_LinuxNetwork-0 (Сети в Linux)
+# Сети в Linux
 
 ##Оглавление
 
