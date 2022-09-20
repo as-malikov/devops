@@ -1,0 +1,18 @@
+#!/bin/bash
+
+export HOSTNAME=$(hostname)
+export TIMEZONE=$(timedatectl | grep zone | awk '{printf $3" UTC "}') $(timedatectl | grep Local | awk '{printf $6}')
+export USER=$(whoami)
+export OS=$(cat /etc/issue | awk '{printf $1" "$2" "$3}')
+export DATE=$(date +'%d %b %Y %T')
+export UPTIME=$(uptime -p | cut -d " " -f2,3)
+export UPTIME_SEC=$(cat /proc/uptime | cut -d " " -f1)
+export IP=$(hostname -I | cut -d " " -f1)
+export MASK=$(ifconfig | grep "$IP" | awk '{printf $4}')
+export GATEWAY=$(ip r | grep default | awk '{printf $3}')
+export RAM_TOTAL=$(free -m | grep Mem | awk '{printf "%.3f Gb", $2/1024}')
+export RAM_FREE=$(free -m | grep Mem | awk '{printf "%.3f Gb", $4/1024}')
+export RAM_USED=$(free -m | grep Mem | awk '{printf "%.3f Gb", $3/1024}')
+export SPACE_ROOT=$(df -k / | grep / | awk '{printf "%.2f MB", $2/1024}')
+export SPACE_ROOT_USED=$(df -k / | grep / | awk '{printf "%.2f MB", $3/1024}')
+export SPACE_ROOT_FREE=$(df -k / | grep / | awk '{printf "%.2f MB", $4/1024}')

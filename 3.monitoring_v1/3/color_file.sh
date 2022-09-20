@@ -1,0 +1,20 @@
+#!/bin/bash
+
+stop="\033[0m"
+
+echo -e "${1}${2}HOSTNAME${stop}${stop} = ${3}${4}${3}${4}$HOSTNAME${stop}"
+echo -e "${1}${2}TIMEZONE${stop} = ${3}${4}$TIMEZONE${stop}"
+echo -e "${1}${2}USER${stop} = ${3}${4}$USER${stop}"
+echo -e "${1}${2}OS${stop} = ${3}${4}$OS${stop}"
+echo -e "${1}${2}DATE${stop} = ${3}${4}$DATE${stop}"
+echo -e "${1}${2}UPTIME${stop} = ${3}${4}$UPTIME${stop}"
+echo -e "${1}${2}UPTIME_SEC${stop} = ${3}${4}$UPTIME_SEC${stop}"
+echo -e "${1}${2}IP${stop} = ${3}${4}$IP${stop}"
+echo -e "${1}${2}MASK${stop} = ${3}${4}$MASK${stop}"
+echo -e "${1}${2}GATEWAY${stop} = ${3}${4}$GATEWAY${stop}"
+echo -e "${1}${2}RAM_TOTAL${stop} = ${3}${4}$RAM_TOTAL${stop}"
+echo -e "${1}${2}RAM_USED${stop} = ${3}${4}$RAM_USED${stop}"
+echo -e "${1}${2}RAM_FREE${stop} = ${3}${4}$RAM_FREE${stop}"
+echo -e "${1}${2}SPACE_ROOT${stop} = ${3}${4}$SPACE_ROOT${stop}"
+echo -e "${1}${2}SPACE_ROOT_USED${stop} = ${3}${4}$SPACE_ROOT_USED${stop}"
+echo -e "${1}${2}SPACE_ROOT_FREE${stop} = ${3}${4}$SPACE_ROOT_FREE${stop}"
