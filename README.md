@@ -37,6 +37,7 @@ __5. Проект с `docker`:__
   * Dockerfile  
   * Docker-compose  
   * Nginx  
+  
 __6. Проект по CI/CD__  
 
 
