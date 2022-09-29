@@ -54,7 +54,10 @@ __4. Проект по мониторингу в _Linux v.2_ на "bash"__
   `2 - по uniq ip`,  
   `3 - по запросом с ошибками`,  
   `4 - все uniq ip у которых запросы с ошибками`.  
-  * 
+  * Генерация файла report.html при помощи утилиты GoAccess.  
+  * Установка и настройка Prometheus и Grafana, выполнить стресстесты.  
+  * Знакомство со стандартым дашбордом Grafana - Node Exporter Quickstart and Dashboard.  
+  * Скрипт, который собирает базовые метрики (cpu, ram, hdd) и формирует html страничку формата Prometheus.  
 
 __5. Проект с `docker`:__ 
   * Docker Hub  
