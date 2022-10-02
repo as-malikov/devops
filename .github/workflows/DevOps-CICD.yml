@@ -7,7 +7,8 @@ name: DevOps_Repository
 env:
   REPOSITORY: "Repository_name_is_devops"
   # ${{ github.repository }}"
-  DEPLOY    : "Deploy-status-ver-${{ github.sha }}"
+  DEPLOY    : "Deploy-status-ver-1.0"
+  # ${{ github.sha }}"
 
 on:
   push:
