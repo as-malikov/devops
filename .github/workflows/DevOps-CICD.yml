@@ -4,6 +4,9 @@
 # Copyleft (c) by Malikov Andrey 2022
 #-----------------------------------------
 name: DevOps_Repository
+env:
+  REPOSITORY: "Repository_name_is_${{ github.repository }}"
+  DEPLOY    : "Deploy-status-ver-${{ github.sha }}
 
 on:
   push:
@@ -15,13 +18,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Commit in branch main
+      - name: Status commit in branch main
         run : echo "The project has been COMMITTED. Status is OK."
+        
+      - name: Repository_name
+        run : |
+          echo: "${{ env.REPOSITORY }}"
   
   deploy:
     runs-on: ubuntu-latest
     needs: [commit]
     
     steps:
-      - name: Deploy project
+      - name: Status deploy project
         run: echo "The project was DEPLOED. Status is OK."
+        
+      - name: Version
+        run : |
+          echo "${{ env.DEPLOY }}"
