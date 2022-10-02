@@ -5,7 +5,8 @@
 #-----------------------------------------
 name: DevOps_Repository
 env:
-  REPOSITORY: "Repository_name_is_${{ github.repository }}"
+  REPOSITORY: "Repository_name_is_devops"
+  # ${{ github.repository }}"
   DEPLOY    : "Deploy-status-ver-${{ github.sha }}"
 
 on:
