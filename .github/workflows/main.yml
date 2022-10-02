@@ -16,4 +16,4 @@ jobs:
     
     steps:
       - name: Commit in branch main
-        run : echo "Project committed"
+        run : echo "The project has been committed. Status is OK."
