@@ -64,12 +64,16 @@ __4. Проект по мониторингу в _Linux v.2_ на "bash"__
   * Знакомство со стандартым дашбордом Grafana - Node Exporter Quickstart and Dashboard.  
   * Скрипт, который собирает базовые метрики (cpu, ram, hdd) и формирует html страничку формата Prometheus.  
 
-__5. Проект с `docker`:__ 
-  * Docker Hub  
-  * Dockerfile  
-  * Docker-compose  
-  * Nginx  
+__5. Знакомство с `docker`:__  
+  * Команды `docker pull, docker images, docker run, docker ps, docker inspect, docker stop/restart`.  
+  * Операции с образами и контейнерами на основе nginx - `cp, exec, export, rmi`.  
+  * Разработка мини web-сервера с пробросом портов.  
+  * Написать dockerfile и собрать на нем мини web-сервер из прошлого задания  
+  * Проверить dockerfile из предыдущего задания через `__dockle__`. Исправить ошибки.  
+  * Собрать Docker-compose с двумя контейнерами (первый контейнер из прошлого проекта, второй nginx с пробросом портов 8080 на 81). Замапить 8080 второго на 80 localhost.  
   
-__6. Проект по CI/CD__  
-
-
+__6. Знакомство с CI/CD__  
+  * Установка и настройка __gitlab-runner__.  
+  * Написать паплайны этапа CI: __build, codestyle, testing__.  
+  * Написать паплайн этапа CD: __deploy__.  
+  * Настроить уведомления со статусами этапов сборки в __телеграм-бот__.  
