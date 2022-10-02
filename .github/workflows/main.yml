@@ -1,0 +1,19 @@
+#-----------------------------------------
+# GitHub Action DevOps
+#
+# Copyleft (c) by Malikov Andrey 2022
+#-----------------------------------------
+name: DevOps_Repository
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Commit in branch main
+        run : echo "Project committed"
