@@ -23,11 +23,7 @@ jobs:
         
       - name: Repository name
         run : echo "${{ env.REPOSITORY }}"
-  
-  gitclone:
-    runs-on: ubuntu-leatest
-    
-    steps:
+        
       - name: Git clone my repository
         run : actions/checkout@v1
         
