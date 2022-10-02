@@ -1,0 +1,60 @@
+stages:
+  - build
+  - codestyle
+  - testing
+  - deploy
+
+build_gcc:
+  stage: build
+  # Основная часть, где выполняются задания сценария, описана в опции script
+  script:
+    - cd src/cat/
+    - make all
+    - cd ../grep
+    - make all
+  # Набор команд, которые запускаются после scripts
+  after_script:
+    - echo "CI_JOB_STATUS - $CI_JOB_STATUS"
+    - ./my_bot.sh "$CI_JOB_STATUS"
+  # Артефакты представляют из себя промежуточные сборки или файлы, которые могут передаваться от одного этапа — другому.
+  artifacts:
+    # Так можно указать, какие файлы или каталоги будут артефактами.
+    paths:
+      - src/cat/my_cat
+      - src/grep/my_grep
+    # Так можно указать, как долго артефакты задания будут храниться до истечения срока их действия и удаления.
+    expire_in: 30 days
+
+codestyle:
+  stage: codestyle
+  script:
+    - python3 materials/linters/cpplint.py --extensions=c src/cat/my_cat.c
+    - python3 materials/linters/cpplint.py --extensions=c src/cat/my_cat.h
+    - python3 materials/linters/cpplint.py --extensions=c src/grep/my_grep.c
+    - python3 materials/linters/cpplint.py --extensions=c src/grep/my_grep.h
+  after_script:
+    - echo "CI_JOB_STATUS - $CI_JOB_STATUS"
+    - ./my_bot.sh "$CI_JOB_STATUS"
+
+test:
+  stage: testing
+  script:
+    - cd src/cat/
+    - make test
+    - cd ../grep/
+    - make test
+  after_script:
+    - echo "CI_JOB_STATUS - $CI_JOB_STATUS"
+    - ./my_bot.sh "$CI_JOB_STATUS"
+  # Определяет условия запуска задания. on_success (по умолчанию) — если все задания на более ранних этапах завершились успешно.
+  when: on_success
+
+deploy:
+  stage: deploy
+  script:
+    - ./run.sh
+  after_script:
+    - echo "CI_JOB_STATUS - $CI_JOB_STATUS"
+    - ./my_bot.sh "$CI_JOB_STATUS"
+  # пределяет условия запуска задания. manual — запуск вручную (в панели pipeline появится кнопка запуска).
+  when: manual
