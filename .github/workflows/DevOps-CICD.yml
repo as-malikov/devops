@@ -21,7 +21,7 @@ jobs:
       - name: Status commit in branch main
         run : echo "The project has been COMMITTED. Status is OK."
         
-      - name: Repository_name
+      - name: Repository name
         run : |
           echo: "${{ env.REPOSITORY }}"
   
