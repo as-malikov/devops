@@ -23,9 +23,9 @@ jobs:
       - name: Status commit in branch main
         run : echo "The project has been COMMITTED. Status is OK."
         
-      - name: Repository name
-        run : |
-          echo: "${{ env.REPOSITORY }}"
+#       - name: Repository name
+#         run : |
+#           echo: "${{ env.REPOSITORY }}"
   
   deploy:
     runs-on: ubuntu-latest
@@ -35,6 +35,6 @@ jobs:
       - name: Status deploy project
         run: echo "The project was DEPLOED. Status is OK."
         
-      - name: Version
-        run : |
-          echo "${{ env.DEPLOY }}"
+#       - name: Version
+#         run : |
+#           echo "${{ env.DEPLOY }}"
