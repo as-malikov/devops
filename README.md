@@ -1,3 +1,8 @@
+# GitHub Actions Status
+
+Status of Last Deployment:<br>
+<img src="https://github.com/as-malikov/devops/workflows/DevOps_Repository/badge.svg?branch-main"><br>
+
 # DevOps
 _В этом репозитории содержатся учебные проектные по направлению DevOps, которые были мною выполнены по направлению DevOps (проекты выполнены на `Ubuntu 20.04 Server LTS`)_
 ## Содержание репозитория:
