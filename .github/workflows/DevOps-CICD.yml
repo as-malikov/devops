@@ -24,7 +24,7 @@ jobs:
         run : echo "The project has been COMMITTED. Status is OK."
         
       - name: Repository name
-        run : echo: "${{ env.REPOSITORY }}"
+        run : echo "${{ env.REPOSITORY }}"
   
   deploy:
     runs-on: ubuntu-latest
