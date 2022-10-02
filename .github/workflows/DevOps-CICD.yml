@@ -25,7 +25,7 @@ jobs:
         run : echo "${{ env.REPOSITORY }}"
         
       - name: Git clone my repository
-        run : actions/checkout@v1
+        uses : actions/checkout@v1
         
       - name: List current folder
         run: ls -la
